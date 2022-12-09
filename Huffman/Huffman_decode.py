@@ -1,4 +1,5 @@
 from operator import itemgetter
+import re
 
 #создать дерево хаффмана по тексту
 def make_tree(text):
@@ -8,12 +9,6 @@ def make_tree(text):
 	ls = [(text.count(ch), ch) for ch in se]
 	sorted(ls, key=itemgetter(0))
 	'''
-
-	with open('haffman.txt', 'r') as f:
-		letter = f.readline().strip().split()
-		frequency = f.readline().strip().split()
-		make_float_frequency = [float(i) for i in frequency]
-		ls = list(zip(make_float_frequency, letter))
 
 	# построить двоичное дерево по этому списку
 	while len(ls) >= 2:
@@ -68,7 +63,14 @@ def decompress(text, dc_haf):
 		text = text[num:]
 	return st_res
 
-text = "abcde"
+with open('huffman.txt', 'r') as f:
+		letter = f.readline().strip()
+		letter = re.sub(r'\s+', '', letter)
+		frequency = f.readline().strip().split()
+		make_float_frequency = [float(i) for i in frequency]
+		ls = list(zip(make_float_frequency, letter))
+
+text = letter
 dc_haf = make_dict(text)
 compressed_text = compress(text, dc_haf)
 decompress_text = decompress(compressed_text, dc_haf)
