@@ -12,4 +12,8 @@ a b c d e
 
 ## Ссылка на код в репозитории
 - [Huffman](https://github.com/sanyonk/tik_project/tree/main/Huffman)
-- [BWT]
+- [BWT](https://github.com/sanyonk/tik_project/tree/main/BWT)
+
+## Ссылка на отчет
+
+- [Отчет](https://docs.google.com/document/d/1SsJFDGJRMgbFWfmajWNSrVxHdQJNZqrxC8jhTK3q0Qs/edit)
